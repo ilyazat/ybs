@@ -1,10 +1,7 @@
-from datetime import datetime, timedelta
-
 from app.db.db import database, items_table, items_history
 from app.models import SystemItemImportRequest, SystemItem
 from fastapi import APIRouter, status
-from sqlalchemy import text, update
-import logging
+from sqlalchemy import text
 
 router = APIRouter()
 

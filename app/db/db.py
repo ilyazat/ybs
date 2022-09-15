@@ -1,12 +1,9 @@
-from typing import List
-import logging
 import databases
 import sqlalchemy
-from fastapi import FastAPI, APIRouter
-from pydantic import BaseModel
+from fastapi import APIRouter
 
 # SQLAlchemy specific code, as with any other app
-DATABASE_URL = "postgresql://postgres:zzz@localhost:5432/postgres"
+DATABASE_URL = "postgresql://postgres@0.0.0.0:5432/postgres"
 
 database = databases.Database(DATABASE_URL)
 

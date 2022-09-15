@@ -13,16 +13,16 @@ API_BASEURL = "http://localhost:8080"
 ROOT_ID = "069cb8d7-bbdd-47d3-ad8f-82ef4c269df1"
 
 IMPORT_BATCHES = [
-    {
-        "items": [
-            {
-                "type": "FOLDER",
-                "id": "069cb8d7-bbdd-47d3-ad8f-82ef4c269df1",
-                "parentId": None
+        {
+            "items": [
+                {
+                    "type": "FOLDER",
+                    "id": "069cb8d7-bbdd-47d3-ad8f-82ef4c269df1",
+                    "parentId": None
             }
-        ],
-        "updateDate": "2022-02-01T12:00:00Z"
-    },
+            ],
+            "updateDate": "2022-02-01T12:00:00Z"
+        },
     {
         "items": [
             {
@@ -220,7 +220,7 @@ def test_import():
 
 def test_nodes():
     status, response = request(f"/nodes/{ROOT_ID}", json_response=True)
-    # print(json.dumps(response, indent=2, ensure_ascii=False))
+    print(json.dumps(response, indent=2, ensure_ascii=False))
 
     assert status == 200, f"Expected HTTP status code 200, got {status}"
 
@@ -289,7 +289,6 @@ def main():
         API_BASEURL = API_BASEURL[:-1]
 
     print(f"Testing API on {API_BASEURL}")
-
     if test_name is None:
         test_all()
     else:
@@ -302,3 +301,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+    # deep_sort_children(EXPECTED_TREE)
